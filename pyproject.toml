@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fbf-iiot"
+version = "1.0.0"
+description = "Reproducible federated blockchain research implementation for Industrial IoT"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+  "numpy>=2.0,<3",
+  "pandas>=2.2,<3",
+  "scipy>=1.13,<2",
+  "scikit-learn>=1.5,<2",
+  "matplotlib>=3.9,<4",
+  "torch>=2.4,<3",
+  "PyYAML>=6,<7",
+  "requests>=2.32,<3",
+  "openpyxl>=3.1,<4",
+  "cryptography>=43,<47",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+privacy = ["opacus>=1.5,<2", "tenseal>=0.3.15,<0.4"]
+datasets = ["kagglehub>=0.3,<1", "datasets>=3,<5", "pyarrow>=17,<24"]
+energy = ["pynvml>=12,<14"]
+all = ["opacus>=1.5,<2", "tenseal>=0.3.15,<0.4", "kagglehub>=0.3,<1", "datasets>=3,<5", "pyarrow>=17,<24", "pynvml>=12,<14"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

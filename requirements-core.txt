@@ -1,0 +1,12 @@
+numpy>=2.0,<3
+pandas>=2.2,<3
+scipy>=1.13,<2
+scikit-learn>=1.5,<2
+matplotlib>=3.9,<4
+torch>=2.4,<3
+PyYAML>=6,<7
+requests>=2.32,<3
+openpyxl>=3.1,<4
+cryptography>=43,<47
+kagglehub>=0.3,<1
+pynvml>=12,<14

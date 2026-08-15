@@ -1,0 +1,51 @@
+experiment:
+  dataset: secom
+  max_samples: 10000
+  test_size: 0.20
+  clients: 10
+  rounds: 50
+  local_epochs: 3
+  batch_size: 64
+  learning_rate: 0.001
+  weight_decay: 0.00001
+  dirichlet_alpha: 0.5
+  min_client_samples: 20
+  aggregator: braga
+  consensus: hybrid
+  validators: 7
+  attack: sign_flip
+  attack_fraction: 0.0
+  attack_strength: 5.0
+  seed: 42
+  device: auto
+
+privacy:
+  mode: adaptive
+  clip_norm: 1.0
+  noise_multiplier: 1.1
+  delta: 0.00001
+  sensitivity: 0.60
+  he_poly_modulus_degree: 8192
+  he_scale_bits: 40
+  he_chunk_size: 2048
+
+aggregation:
+  method: braga
+  mad_z_threshold: 3.5
+  cosine_threshold: 0.05
+  reputation_floor: 0.05
+  reputation_decay: 0.80
+  reputation_recovery: 0.05
+  sketch_dim: 128
+
+network:
+  base_latency_ms: 5.0
+  jitter_ms: 1.0
+  packet_loss: 0.0
+
+suite:
+  datasets: [secom, cmapss, tep, factorynet]
+  aggregators: [fedavg, braga]
+  attack: sign_flip
+  attack_fractions: [0.0, 0.1, 0.2, 0.3]
+  seeds: [42, 43, 44, 45, 46]
